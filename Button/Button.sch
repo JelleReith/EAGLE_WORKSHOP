@@ -8271,6 +8271,47 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="BATT_HLDR_COIN">
+<packages>
+<package name="BATTHLDR1025-7">
+<pad name="NEGATIVE" x="0" y="0" drill="1.52" diameter="3.81"/>
+<pad name="POSITIVE" x="20.49" y="0" drill="1.52" diameter="3.81"/>
+<circle x="5.08" y="0" radius="14" width="0.127" layer="21"/>
+<wire x1="18.58" y1="3.81" x2="24.13" y2="3.81" width="0.127" layer="21"/>
+<wire x1="24.13" y1="3.81" x2="24.13" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="24.13" y1="-3.81" x2="18.58" y2="-3.81" width="0.127" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="BATTERY">
+<wire x1="-1.27" y1="3.81" x2="-1.27" y2="-3.81" width="0.4064" layer="94"/>
+<wire x1="0" y1="1.27" x2="0" y2="-1.27" width="0.4064" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.524" y2="0" width="0.1524" layer="94"/>
+<text x="-3.81" y="5.08" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-6.35" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="-" x="2.54" y="0" visible="off" length="short" direction="pwr" rot="R180"/>
+<pin name="+" x="-5.08" y="0" visible="off" length="short" direction="pwr"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BATTHLDR1025-7">
+<gates>
+<gate name="G$1" symbol="BATTERY" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="BATTHLDR1025-7">
+<connects>
+<connect gate="G$1" pin="+" pad="POSITIVE"/>
+<connect gate="G$1" pin="-" pad="NEGATIVE"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -8287,6 +8328,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="4.7nf"/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="150k, 1%"/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.01uf"/>
+<part name="U$1" library="BATT_HLDR_COIN" deviceset="BATTHLDR1025-7" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8316,6 +8358,10 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="C2" gate="G$1" x="-15.24" y="35.56" smashed="yes" rot="R270">
 <attribute name="NAME" x="-14.859" y="34.036" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="-19.939" y="34.036" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="U$1" gate="G$1" x="55.88" y="5.08" smashed="yes">
+<attribute name="NAME" x="52.07" y="10.16" size="1.778" layer="95"/>
+<attribute name="VALUE" x="52.07" y="-1.27" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -8353,6 +8399,11 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="C2" gate="G$1" pin="2"/>
 <wire x1="-20.32" y1="35.56" x2="-22.86" y2="35.56" width="0.1524" layer="91"/>
 <label x="-22.86" y="35.56" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="-"/>
+<wire x1="58.42" y1="5.08" x2="60.96" y2="5.08" width="0.1524" layer="91"/>
+<label x="60.96" y="5.08" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -8401,6 +8452,13 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="C2" gate="G$1" pin="1"/>
 <pinref part="IC2" gate="A" pin="CV"/>
 <wire x1="-12.7" y1="35.56" x2="-10.16" y2="35.56" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="+VBAT" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="+"/>
+<wire x1="50.8" y1="5.08" x2="48.26" y2="5.08" width="0.1524" layer="91"/>
+<label x="48.26" y="5.08" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
