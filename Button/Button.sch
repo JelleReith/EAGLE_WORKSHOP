@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.2">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -9339,7 +9339,8 @@ LED</description>
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0" drill="0">
+<class number="0" name="default" width="0.3048" drill="0.3048">
+<clearance class="0" value="0.3048"/>
 </class>
 </classes>
 <parts>
@@ -9400,8 +9401,8 @@ LED</description>
 <attribute name="NAME" x="-74.93" y="27.94" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-74.93" y="39.37" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="IC1" gate="P" x="68.58" y="78.74" smashed="yes" rot="R270">
-<attribute name="NAME" x="67.945" y="77.47" size="1.778" layer="95" rot="R270"/>
+<instance part="IC1" gate="P" x="76.2" y="78.74" smashed="yes" rot="R270">
+<attribute name="NAME" x="75.565" y="77.47" size="1.778" layer="95" rot="R270"/>
 </instance>
 <instance part="D1" gate="G$1" x="121.92" y="60.96" smashed="yes" rot="R270">
 <attribute name="NAME" x="117.348" y="64.389" size="1.778" layer="95" font="vector"/>
@@ -9489,8 +9490,8 @@ LED</description>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="VDD"/>
-<wire x1="76.2" y1="78.74" x2="78.74" y2="78.74" width="0.1524" layer="91"/>
-<label x="78.74" y="78.74" size="1.27" layer="95" xref="yes"/>
+<wire x1="83.82" y1="78.74" x2="86.36" y2="78.74" width="0.1524" layer="91"/>
+<label x="86.36" y="78.74" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="D1" gate="G$1" pin="A"/>
@@ -9546,8 +9547,8 @@ LED</description>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="VSS"/>
-<wire x1="60.96" y1="78.74" x2="58.42" y2="78.74" width="0.1524" layer="91"/>
-<label x="58.42" y="78.74" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="68.58" y1="78.74" x2="66.04" y2="78.74" width="0.1524" layer="91"/>
+<label x="66.04" y="78.74" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="A" pin="RES"/>
@@ -9737,6 +9738,24 @@ LED</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,68.58,78.74,IC1P,VSS,GND,,,"/>
+<approved hash="104,1,83.82,78.74,IC1P,VDD,VCC,,,"/>
+<approved hash="104,1,10.16,30.48,IC2,V+,VCC,,,"/>
+<approved hash="104,1,-81.28,33.02,U$1,-,GND,,,"/>
+<approved hash="104,1,-73.66,33.02,U$1,+,+VBAT,,,"/>
+<approved hash="113,1,120.65,63.0149,D1,,,,,"/>
+<approved hash="113,1,120.65,53.8251,D2,,,,,"/>
+<approved hash="113,1,120.65,50.3149,D3,,,,,"/>
+<approved hash="113,1,120.65,41.1251,D4,,,,,"/>
+<approved hash="113,1,120.65,35.0749,D5,,,,,"/>
+<approved hash="113,1,120.65,25.8851,D6,,,,,"/>
+<approved hash="113,1,120.65,19.8349,D7,,,,,"/>
+<approved hash="113,1,120.65,10.6451,D8,,,,,"/>
+<approved hash="113,1,120.65,4.59486,D9,,,,,"/>
+<approved hash="113,1,120.65,-4.59486,D10,,,,,"/>
+<approved hash="113,1,-68.58,34.2646,D13,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
